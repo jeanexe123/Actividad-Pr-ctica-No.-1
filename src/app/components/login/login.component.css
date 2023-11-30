@@ -1,0 +1,64 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 92vh;
+    background-image: url('login.jpg');
+    background-size: cover; /* Ajustar el tamaño de la imagen */
+    background-position: center; /* Posición del fondo */
+    padding: 20px;
+  }
+  
+  /* Estilo para los formularios */
+  form {
+    margin-bottom: 20px;
+    background-color: #fff; /* Color de fondo para los formularios */
+     padding: 20px; /* Espacio interno dentro de los formularios */
+    border-radius: 8px; /* Borde redondeado */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra para resaltar */
+    max-width: 300px; /* Ancho máximo del formulario */
+    width: 100%; /* Ocupar el ancho disponible */
+    margin: 0 auto; /* Centrar horizontalmente */
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input[type="email"],
+  input[type="password"],
+  input[type="text"] {
+    width: calc(100% - 20px);
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .button-container {
+    /* Estilos para el contenedor de botones */
+    display: flex;
+    justify-content: space-between; /* Coloca los botones en los extremos */
+    align-items: center;
+  }
+  
+  button[type="submit"]{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: rgb(45, 45, 232); /* Color azul para los botones */
+    color: white; /* Color de texto blanco para contraste */
+    /* Transición para un efecto suave al pasar el mouse */
+     transition: background-color 0.3s ease;
+  }
+  .button-container button {
+    margin: 0 10px;
+  }
+  button[type="submit"]:hover{
+    /* Estilos al pasar el ratón por encima */
+    opacity: 0.8;
+    background-color: rgb(67, 67, 148);
+  }
+  

@@ -1,0 +1,148 @@
+<!-- inicio.component.html -->
+<div class="dashboard">
+    <!-- Barra de navegación a la izquierda -->
+    <div class="sidebar">
+      <ul>
+        <li><button (click)="clientes()">Clientes</button></li>
+        <li><button (click)="habitaciones()">Habitaciones</button></li>
+        <li><button (click)="reservaciones()">Reservaciones</button></li>
+        <li><button routerLink = "" routerLinkActive="active">Salir</button></li>
+      </ul>
+    </div>
+  
+    <!-- Sección de visualización a la derecha -->
+    <div class="main-content">
+      <div *ngIf="mostrarClientes">
+        <h2>CLIENTES</h2>
+        <button type="submit" (click)="formularioCliente()">Registrar Cliente</button>
+        <div class="table-container">
+          <table class="table">
+            <thead class="table-head">
+              <tr>
+                <th scope="col">CEDULA</th>
+                <th scope="col">NOMBRE</th>
+                <th scope="col">APELLIDOS</th>
+                <th scope="col">TELEFONO</th>
+                <th scope="col">EMAIL</th>
+                <th scope="col">ACCIONES</th>
+              </tr>
+            </thead>
+            <tbody class="table-body">
+              <!-- Aquí irán los datos de los clientes -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div *ngIf="mostrarFormularioCliente">
+        <div class="container">
+          <div class="formularioClientes">
+            <h2>Registrar Cliente</h2>
+            <form (submit)="guardarCliente()">
+              <label for="cedula">Id Cliente:</label>
+                <input type="text" id="cedula" name="cedula" required><br><br>
+
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required><br><br>
+
+                <label for="apellidos">Apellidos:</label>
+                <input type="text" id="apellidos" name="apellidos" required><br><br>
+
+                <label for="telefono">Telefono:</label>
+                <input type="text" id="telefono" name="telefono" required><br><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <button type="submit" class="center-button">Guardar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      
+      <div *ngIf="mostrarHabitaciones">
+        <h2>HABITACIONES</h2>
+        <button type="submit" (click)="formularioHabitacion()">Registrar Habitacion</button>      
+        <div class="table-container">
+          <table class="table"> 
+            <thead class = "table-head">
+              <tr>
+                  <th scope="col">#HABITACION</th>
+                  <th scope="col">DESCRIPCION</th>
+                  <th scope="col">PRECIO</th> 
+                  <th scope="col">ACCIONES</th>   
+              </tr>
+            </thead>
+            <tbody class="table-body">
+              <!-- Aquí irán los datos de las habitaciones -->
+            </tbody>  
+          </table>
+        </div>     
+      </div>
+
+      <div *ngIf="mostrarFormularioHabitacion">
+        <div class="container">
+          <div class="formularioHabitacion">
+            <h2>Registrar Habitacion</h2>
+            <form (submit)="guardarHabitacion()">
+              <label for="#habitacion">#Habitacion:</label>
+              <input type="number" id="#habitacion" name="#habitacion" required><br><br>
+          
+              <label for="descripcion">Descripcion:</label>
+              <input type="text" id="descripcion" name="descripcion" required><br><br>
+          
+              <label for="precio">Precio:</label>
+              <input type="number" id="precio" name="precio" required><br><br>
+          
+              <button type="submit" class="center-button">Guardar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div *ngIf="mostrarReservaciones">
+        <h2>RESERVACIONES</h2>
+        <button type="submit" (click)="formularioReservacion()">Registrar Reservacion</button> 
+        <div class="table-container">
+          <table class="table"> 
+            <thead class = "table-head">
+              <tr>
+                  <th scope="col">#HABITACION</th>
+                  <th scope="col">CEDULA</th>
+                  <th scope="col">FECHA INICIO</th>
+                  <th scope="col">FECHA FIN</th>
+                  <th scope="col">ACCIONES</th>   
+              </tr>
+            </thead>
+            <tbody class="table-body">
+              <!-- Aquí irán los datos de las reservaciones -->
+            </tbody>  
+          </table>  
+        </div>       
+      </div>
+
+      <div *ngIf="mostrarFormularioReservacion">
+        <div class="container">
+          <div class="formularioReservacion">
+            <h2>Registrar Reservacion</h2>
+            <form (submit)="guardarReservacion()">
+              <label for="#habitacion">#Habitacion:</label>
+              <input type="number" id="#habitacion" name="#habitacion" required><br><br>
+          
+              <label for="cedula">Id Cliente:</label>
+              <input type="text" id="cedula" name="cedula" required><br><br>
+          
+              <label for="diaInicial">Dia inicial:</label>
+              <input type="date" id="diaInicial" name="diaInicial" required><br><br>
+
+              <label for="diaFinal">Dia final:</label>
+              <input type="date" id="diaFinal" name="diaFinal" required><br><br>
+          
+              <button type="submit" class="center-button">Guardar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </div>
+</div>
